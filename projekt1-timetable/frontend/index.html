@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timetable</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <h1>Timetable</h1>
+    <table id="timetable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Date</th>
+                <th>Hour</th>
+                <th>Subject</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Timetable rows will be dynamically added here -->
+        </tbody>
+    </table>
+    <button onclick="showAddForm()">Add New Entry</button>
+    <div id="form-container" style="display: none;">
+        <h2 id="form-title">Add Entry</h2>
+        <form id="timetable-form" onsubmit="submitForm(event)">
+            <input type="hidden" id="entry-id">
+            <label for="date">Date:</label>
+            <input type="text" id="date" required><br><br>
+            <label for="hour">Hour:</label>
+            <input type="number" id="hour" required><br><br>
+            <label for="subject">Subject:</label>
+            <input type="text" id="subject" required><br><br>
+            <button type="submit">Save</button>
+            <button type="button" onclick="hideForm()">Cancel</button>
+        </form>
+    </div>
+</body>
+</html>
